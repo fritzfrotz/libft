@@ -6,25 +6,29 @@
 /*   By: fhollman <fhollman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 08:02:22 by fhollman          #+#    #+#             */
-/*   Updated: 2025/10/21 09:42:56 by fhollman         ###   ########.fr       */
+/*   Updated: 2025/10/22 12:15:43 by fhollman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	strlcpy(char	*dest, char	*src, size_t	size)
-{
-	size_t	len_src;
-	size_t	len_dest;
+#include "libft.h"
 
-	len_src = 0;
-	len_dest = 0;
-	while (src[len_src])
-		++len_src;
-	if (len_src > size)
-		return (len_src);
-	while (src[len_src])
-		{
-			dest[len_dest] = dest[len_dest];
-			++len_dest;
-		}
-	dest + len_src + 1 = '\0';
+size_t	strlcpy(char	*dest, const char	*src, size_t	size)
+{
+	size_t	src_len;
+	size_t	i;
+
+	src_len = 0;
+
+	while (src[src_len])
+		++src_len;
+	if (size == 0)
+		return (src_len);
+	i = 0;
+	while (src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (src_len);
 }

@@ -6,13 +6,9 @@ int	main(void)
 {
 	int	i;
 
-	//copy strings
-	//edge cases?
-
-
 	printf("Testing ft_isprint...\n");
 	i = -1;
-	while ((i<= 255) && (ft_strlcpy(i) == strlcpy(i)))
+	while ((i<= 255) && (!!ft_isprint(i) == !!isprint(i)))
 	{
 		++i;
 	}
