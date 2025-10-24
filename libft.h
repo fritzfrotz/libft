@@ -6,7 +6,7 @@
 /*   By: fhollman <fhollman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 07:55:37 by fhollman          #+#    #+#             */
-/*   Updated: 2025/10/24 10:05:48 by fhollman         ###   ########.fr       */
+/*   Updated: 2025/10/24 12:06:41 by fhollman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,11 @@ char	*strnstr(const char *big, const char *little, size_t len);
 char	*strrchr(const char *s, int c);
 
 // memory functions
+void	*memset(void *s, int c, size_t n);
+void	*memcpy(void *dest, const void *src, size_t n);
+void	bzero(void *s, size_t n);
+
+
 
 // list functions
 
