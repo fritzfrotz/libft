@@ -6,7 +6,7 @@
 /*   By: fhollman <fhollman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 07:55:37 by fhollman          #+#    #+#             */
-/*   Updated: 2025/10/22 10:11:50 by fhollman         ###   ########.fr       */
+/*   Updated: 2025/10/24 10:05:48 by fhollman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,10 @@ int	ft_strlen(const char	*s);
 int	ft_tolower(int	c);
 int	ft_toupper(int	c);
 int	ft_isprint(int	c);
+char	*strchr(const char *s, int c);
+int	strncmp(const char *s1, const char *s2, size_t n);
+char	*strnstr(const char *big, const char *little, size_t len);
+char	*strrchr(const char *s, int c);
 
 // memory functions
 
