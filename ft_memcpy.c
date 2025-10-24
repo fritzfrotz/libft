@@ -6,7 +6,7 @@
 /*   By: fhollman <fhollman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 11:42:46 by fhollman          #+#    #+#             */
-/*   Updated: 2025/10/24 12:05:19 by fhollman         ###   ########.fr       */
+/*   Updated: 2025/10/24 14:50:43 by fhollman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 */
 
 
-void	*memcpy(void *dest, const void *src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	unsigned char 	byte;
 	unsigned char	*ptr_src;
