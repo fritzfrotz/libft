@@ -6,11 +6,11 @@
 /*   By: fhollman <fhollman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 07:55:44 by fhollman          #+#    #+#             */
-/*   Updated: 2025/10/22 10:03:19 by fhollman         ###   ########.fr       */
+/*   Updated: 2025/10/27 07:24:31 by fhollman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	strlen(const char	*s)
+int	ft_strlen(const char	*s)
 {
 	int i;
 

@@ -6,7 +6,7 @@
 /*   By: fhollman <fhollman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 15:05:48 by fhollman          #+#    #+#             */
-/*   Updated: 2025/10/24 15:34:13 by fhollman         ###   ########.fr       */
+/*   Updated: 2025/10/27 08:52:53 by fhollman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,15 @@ int	atoi(const char *nptr)
 	int	sign_flag;
 	int	num;
 	
-	num = 0;
+	while (*nptr >= 9 && *nptr <= 13 || *nptr == 32)
+		++nptr;
 	sign_flag = 1;
 	if (*nptr == '-')
 		sign_flag * -1;
 	if (*nptr == '+')
 		++nptr;
-	while(*nptr)
-	{
-		num += (npr)
-	}
-	
+	num = 0;
+	while(*nptr >= '0' && *nptr <= '9')
+		num = num * 10 + (*nptr + '0');
+	return(num);
 }

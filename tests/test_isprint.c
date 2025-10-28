@@ -1,21 +1,19 @@
-#include "../libft.h"
-#include <stdio.h>
+#include "libft.h"
 #include <ctype.h>
+#include <stdio.h>
 
 int	main(void)
 {
-	int	i;
-
-	printf("Testing ft_isprint...\n");
-	i = -1;
-	while ((i<= 255) && (!!ft_isprint(i) == !!isprint(i)))
+	int	n = -2;
+	printf("Testing isalnum...");
+	while (++n < 256)
 	{
-		++i;
+		if (!!ft_isalnum(n) != !!isalnum(n))
+		{
+			printf("Error at %i", n);
+			return (1);
+		}
 	}
-	if (i == 256)
-		printf("all tests completed!\n");
-	else
-		printf("error at %d\n, ft func = %d, real func = %d", i, ft_isprint(i), isprint(i));
-		return (1);
-	return (0);
+	printf("success");
+	return(0);
 }

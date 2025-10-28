@@ -6,7 +6,7 @@
 /*   By: fhollman <fhollman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 08:04:08 by fhollman          #+#    #+#             */
-/*   Updated: 2025/10/24 10:12:12 by fhollman         ###   ########.fr       */
+/*   Updated: 2025/10/27 08:20:17 by fhollman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,7 @@ char	*strnstr(const char *big, const char *little, size_t len)
 // if chars dont match untill len little -1
 //start again on the next little[1]
 
-	int	len;
-	int	i;
+	size_t	i;
 
 	i = 0;
 	len = ft_strlen(little);
@@ -41,14 +40,14 @@ char	*strnstr(const char *big, const char *little, size_t len)
 	{
 		if (*big == *little)
 		{
-			while ((*big == little[i]) && (i > len))
+			while ((*big == little[i]) && (i < len))
 			{
 				++big;
 				++i;
 				if (i == (len - 1))
-					return(big - i);
+					return(((char *)big - i));
 			}
-			big - i;
+			big -= i;
 			i = 0;
 		}
 		++big;
