@@ -19,7 +19,6 @@ ft_strlcat.c \
 ft_strncmp.c \
 ft_strnstr.c \
 ft_strrchr.c \
-
 ft_atoi.c\
 
 
