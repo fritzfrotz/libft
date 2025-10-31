@@ -1,5 +1,14 @@
+/*
+todo:
+[ ] header
+[ ] maker
+[ ] testing
+*/
+
+
 #include <stdio.h>
 #include "libft.h"
+
 
 typedef struct s_test_case
 {
