@@ -6,11 +6,11 @@
 /*   By: fhollman <fhollman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 14:18:52 by fhollman          #+#    #+#             */
-/*   Updated: 2025/10/21 10:06:40 by fhollman         ###   ########.fr       */
+/*   Updated: 2025/11/03 09:25:44 by fhollman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_alpha(int	c)
+int	ft_isalpha(int	c)
 {
 	return (((c >= 'a') && (c <= 'z')) || \
 		((c >= 'A') && (c <= 'Z')));

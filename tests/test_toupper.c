@@ -2,18 +2,26 @@
 #include <ctype.h>
 #include <stdio.h>
 
-int	main(void)
+/*
+todo:
+[x] header
+[x] maker
+[x] maker_test
+[x] testing
+*/
+
+int	test_toupper(void)
 {
 	int	n = -2;
-	printf("Testing isalnum...");
+	printf("Testing toupper...");
 	while (++n < 256)
 	{
-		if (ft_isalnum(n) != isalnum(n))
+		if (ft_toupper(n) != toupper(n))
 		{
 			printf("Error at %i", n);
 			return (1);
 		}
 	}
-	printf("success");
+	printf("success\n");
 	return(0);
 }

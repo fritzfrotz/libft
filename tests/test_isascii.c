@@ -7,16 +7,16 @@ todo:
 [x] header
 [x] maker
 [x] maker_test
-[x] testing
+[ ] testing
 */
 
-int	test_isalpha(void)
+int	test_isascii(void)
 {
 	int	n = -2;
-	printf("Testing isalpha... ");
+	printf("Testing isascii...");
 	while (++n < 256)
 	{
-		if (!!ft_isalpha(n) != !!isalpha(n))
+		if (!!ft_isascii(n) != !!isascii(n))
 		{
 			printf("Error at %i", n);
 			return (1);

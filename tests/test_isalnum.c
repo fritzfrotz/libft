@@ -2,7 +2,15 @@
 #include <ctype.h>
 #include <stdio.h>
 
-int	main(void)
+/*
+todo:
+[x] header
+[x] maker
+[x] maker_test
+[ ] testing
+*/
+
+int	test_isalnum(void)
 {
 	int	n = -2;
 	printf("Testing isalnum...");
@@ -14,6 +22,6 @@ int	main(void)
 			return (1);
 		}
 	}
-	printf("success");
+	printf("success\n");
 	return(0);
 }

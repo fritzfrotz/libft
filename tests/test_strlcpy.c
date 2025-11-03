@@ -2,6 +2,14 @@
 #include <stdio.h>
 #include <ctype.h>
 
+/*
+todo:
+[x] header
+[x] maker
+[x] maker_test
+[ ] testing
+*/
+
 int	main(void)
 {
 	int	i;
