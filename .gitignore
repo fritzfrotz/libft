@@ -1,0 +1,6 @@
+libft.a
+*.o
+run_tests
+
+.DS_Store
+.vscode
