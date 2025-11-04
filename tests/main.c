@@ -14,6 +14,8 @@ int test_strlcat(void);
 int test_strchr(void);
 void test_strrchr(void);
 void test_strnstr(void);
+void test_strncmp(void);
+
 
 
 
@@ -36,6 +38,8 @@ int	main(void)
 	test_strchr();
 	test_strrchr();
 	test_strnstr();
+	test_strncmp();
+
 
 
 
