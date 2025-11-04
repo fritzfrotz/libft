@@ -22,7 +22,7 @@ test_strlcat.c \
 test_strchr.c \
 test_strrchr.c \
 test_strnstr.c \
-#test_strncpm.c
+test_strncpm.c
 
 
 
