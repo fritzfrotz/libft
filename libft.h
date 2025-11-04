@@ -6,7 +6,7 @@
 /*   By: fhollman <fhollman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 07:55:37 by fhollman          #+#    #+#             */
-/*   Updated: 2025/11/03 09:55:23 by fhollman         ###   ########.fr       */
+/*   Updated: 2025/11/04 07:13:10 by fhollman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,13 @@ int		ft_strlen(const char	*s);
 int		ft_tolower(int	c);
 int		ft_toupper(int	c);
 int		ft_isprint(int	c);
-char	*strchr(const char *s, int c);
-int		strncmp(const char *s1, const char *s2, size_t n);
-char	*strnstr(const char *big, const char *little, size_t len);
-char	*strrchr(const char *s, int c);
-size_t	strlcpy(char	*dest, const char	*src, size_t	size);
+char	*ft_strchr(const char *s, int c);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+char	*ft_strnstr(const char *big, const char *little, size_t len);
+char	*ft_strrchr(const char *s, int c);
+size_t	ft_strlcpy(char	*dest, const char	*src, size_t	size);
+size_t	ft_strlcat(char	*dst, const char	*src, size_t	size);
+
 
 // memory functions
 void	*ft_memset(void *s, int c, size_t n);

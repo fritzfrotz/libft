@@ -17,7 +17,12 @@ test_isascii.c \
 test_tolower.c \
 test_toupper.c \
 test_strlen.c \
-#test_strlcpy.c \
+test_strlcpy.c \
+test_strlcat.c \
+test_strchr.c \
+test_strrchr.c \
+test_strnstr.c \
+#test_strncpm.c
 
 
 

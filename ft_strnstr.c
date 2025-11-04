@@ -6,14 +6,10 @@
 /*   By: fhollman <fhollman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 08:04:08 by fhollman          #+#    #+#             */
-/*   Updated: 2025/10/27 08:20:17 by fhollman         ###   ########.fr       */
+/*   Updated: 2025/11/04 10:30:04 by fhollman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*strnstr(const char *big, const char *little, size_t len)
-{
 /*
 * locates the first occurence of a null terminated sting 'little' 
 * in the string "big'. If its found a pointer to the first char of it 
@@ -31,25 +27,27 @@ char	*strnstr(const char *big, const char *little, size_t len)
 // if first letter found check for whole string
 // if chars dont match untill len little -1
 //start again on the next little[1]
+#include "libft.h"
+
+char	*ft_strnstr(const char *big, const char *little, size_t len)
+{
 
 	size_t	i;
-
+	size_t	e;
+	size_t	len_l;
+	
+	len_l = ft_strlen(little);
+	if (len_l == 0)
+		return((char*)big);
 	i = 0;
-	len = ft_strlen(little);
-	while(*big)
+		while(big[i] != '\0' && i < len)
 	{
-		if (*big == *little)
-		{
-			while ((*big == little[i]) && (i < len))
-			{
-				++big;
-				++i;
-				if (i == (len - 1))
-					return(((char *)big - i));
-			}
-			big -= i;
-			i = 0;
-		}
-		++big;
+		e = 0;
+		while ((i + e) < len && little[e] != '\0' && big[i + e] == little[e])
+			e++;
+		if (e == len_l)
+			return (char*)&big[i];
+	i++;
 	}
+	return (NULL);
 }
