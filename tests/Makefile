@@ -22,7 +22,17 @@ test_strlcat.c \
 test_strchr.c \
 test_strrchr.c \
 test_strnstr.c \
-test_strncpm.c
+test_strncpm.c \
+test_memcpy.c \
+test_memset.c \
+test_bzero.c \
+test_memchr.c \
+test_memcmp.c \
+test_calloc.c \
+test_strdup.c \
+test_substr.c \
+test_strjoin.c \
+
 
 
 

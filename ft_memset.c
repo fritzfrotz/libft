@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fhollman <fhollman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 10:08:49 by fhollman          #+#    #+#             */
-/*   Updated: 2025/10/24 14:50:30 by fhollman         ###   ########.fr       */
+/*   Updated: 2025/11/04 15:30:46 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ void	*ft_memset(void *s, int c, size_t n)
 
 	byte = c;
 	ptr = s;
-	while(--n)
+	while(n--)
 	{
-		*ptr = byte;
+		*ptr++ = byte;
 	}
 	return (s);
 }

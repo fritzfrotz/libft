@@ -6,16 +6,27 @@
 */
 #include "libft.h"
 
-void	*calloc(size_t nmemb, size_t size)
+#include "libft.h"
+
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	unsigned char	*mem;
+	void	*mem;
 	size_t	total_size;
-	
+
+	if (nmemb == 0 || size == 0)
+	{
+		mem = malloc(1); 
+		if (mem == NULL)
+			return (NULL);
+        ft_bzero(mem, 1); 
+		return (mem);
+	}
+	if (nmemb > (SIZE_MAX / size))
+		return (NULL);
 	total_size = nmemb * size;
 	mem = malloc(total_size);
 	if (mem == NULL)
 		return (NULL);
-	
 	ft_bzero(mem, total_size);
 	return (mem);
 }
