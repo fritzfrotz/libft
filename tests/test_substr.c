@@ -74,5 +74,13 @@ void test_substr(void)
     result = ft_substr(s, 6, 0); // ""
     check("'len' is 0", result, "");
 
-    // --- Test 6: Source string 's' is NULL ---
-    result = ft_substr(NULL, 0
+	// --- Test 6: Source string 's' is NULL ---
+    result = ft_substr(NULL, 0, 5);
+    check("Source 's' is NULL", result, NULL);
+
+    // --- Test 7: Source string is empty ---
+    result = ft_substr("", 0, 5);
+    check("Source is empty string", result, "");
+
+    printf("---------------------------\n");
+}

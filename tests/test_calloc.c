@@ -66,3 +66,5 @@ void test_calloc(void)
     if (mem != NULL)
     {
         printf(" [PASS]\n");
+	}
+}

@@ -22,16 +22,27 @@ test_strlcat.c \
 test_strchr.c \
 test_strrchr.c \
 test_strnstr.c \
-test_strncpm.c \
+test_strncmp.c \
 test_memcpy.c \
 test_memset.c \
 test_bzero.c \
+test_memmove.c \
 test_memchr.c \
 test_memcmp.c \
 test_calloc.c \
 test_strdup.c \
 test_substr.c \
 test_strjoin.c \
+test_strtrim.c \
+test_split.c \
+test_itoa.c \
+test_strmapi.c \
+test_striteri.c \
+test_putchar_fd.c \
+test_putstr_fd.c \
+test_putendl_fd.c \
+test_putnbr_fd.c \
+
 
 
 
@@ -40,7 +51,7 @@ OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) $(LIBFT_A)
 	$(CC) $(CFLAGS) $(OBJS) -L$(LIBFT_PATH) -lft -o $(NAME)
 
 %.o: %.c
@@ -48,14 +59,11 @@ $(NAME): $(OBJS)
 clean:
 	$(RM) $(OBJS)
 
-fclean: clean
-	$(RM) $(NAME)
-
 run: $(NAME)
 	./$(NAME)
 
 $(LIBFT_A):
-	make -C ..
+	make -C $(LIBFT_PATH)
 
 fclean: clean
 	$(RM) $(NAME)

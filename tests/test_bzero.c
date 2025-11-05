@@ -55,3 +55,4 @@ void test_bzero(void)
     check("Overwrite 'hello' with '\\0'", buffer1, buffer2, 12);
 
     // --- Test 3: The n=0 test (CRITICAL) ---
+}

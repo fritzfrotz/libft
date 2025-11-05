@@ -53,8 +53,8 @@ void test_memset(void)
     // --- Test 3: The n=0 test (CRITICAL) ---
     // (We'll re-use the buffers from Test 2)
     // buffer1 is now "***** world"
-    ft_memset(buffer1, 'Z', 0); // Your function (should do nothing)
-    memset(buffer2, 'Z', 0); // The real function (does nothing)
+    ft_memset(buffer1, 'Z', (0)); // Your function (should do nothing)
+    memset(buffer2, 'Z', (0)); // The real function (does nothing)
     
     check("n = 0 (do nothing)", buffer1, buffer2, 12);
 

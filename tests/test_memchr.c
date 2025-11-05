@@ -28,7 +28,7 @@ static void check(const char *test_name, void *ft_result, void *real_result)
 void test_memchr(void)
 {
     char    str[] = "hello\0world"; // A string with an embedded NULL
-    int     nums[] = {10, 20, 30, 40, 50};
+
     void    *ft_result;
     void    *real_result;
 

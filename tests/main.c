@@ -24,6 +24,19 @@ void test_calloc(void);
 void test_strdup(void);
 void test_substr(void);
 void test_strjoin(void);
+void test_strtrim(void);
+void test_split(void);
+void test_itoa(void);
+void test_strmapi(void);
+void test_striteri(void);
+void test_putchar_fd(void);
+void test_putstr_fd(void);
+void test_putendl_fd(void);
+void test_putnbr_fd(void);
+void test_memmove(void);
+
+
+
 
 
 
@@ -36,7 +49,6 @@ void test_strjoin(void);
 
 int	main(void)
 {
-	test_atoi();
 	test_isalnum();
 	test_isalpha();
 	test_isdigit();
@@ -51,15 +63,36 @@ int	main(void)
 	test_strrchr();
 	test_strnstr();
 	test_strncmp();
+	test_strdup();
+	test_substr();
+	test_strjoin();
+	test_strtrim();
+	test_split();
+	
 	test_memcpy();
 	test_memset();
 	test_bzero();
 	test_memchr();
 	test_memcmp();
 	test_calloc();
-	test_strdup();
-	test_substr();
-	test_strjoin();
+	test_memmove();
+
+	test_itoa();
+	test_atoi();
+
+	test_strmapi();
+	test_striteri();
+
+	test_putchar_fd();
+	test_putstr_fd();
+	test_putendl_fd();
+	test_putnbr_fd();
+
+
+
+
+
+
 
 
 
