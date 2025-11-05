@@ -6,7 +6,7 @@
 /*   By: fhollman <fhollman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 12:44:03 by fhollman          #+#    #+#             */
-/*   Updated: 2025/11/05 08:33:18 by fhollman         ###   ########.fr       */
+/*   Updated: 2025/11/05 08:56:40 by fhollman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,33 +25,38 @@
 //return pt to dest.
 #include "libft.h"
 
+#include "libft.h"
+
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned char	*s;
-	unsigned char	*d;
-	unsigned char	*temp;
-	size_t	n_save;
-	
+	unsigned char		*d;
+	const unsigned char	*s;
+
 	d = (unsigned char *)dest;
-	s = (unsigned char *)src;
-	temp = malloc(n);
-	if (!temp)
+	s = (const unsigned char *)src;
+
+	if (d == NULL && s == NULL)
 		return (NULL);
-	n_save = n;
-	while(n--)
+
+	if (d == s || n == 0)
+		return (dest);
+
+	if (d > s)
 	{
-		*temp = *s;
-		temp++;
-		s++;
+		while (n > 0)
+		{
+			n--;
+			d[n] = s[n];
+		}
 	}
-	temp -= n_save;
-	n = n_save;
-	while(n--)
+	else
 	{
-		*d = *temp;
-		d++;
-		temp++;
+		size_t i = 0;
+		while (i < n)
+		{
+			d[i] = s[i];
+			i++;
+		}
 	}
-	free(temp);
-	return (dest-n_save);
+	return (dest);
 }

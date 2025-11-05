@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_subst.c                                         :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fhollman <fhollman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 11:16:27 by fhollman          #+#    #+#             */
-/*   Updated: 2025/10/28 08:18:27 by fhollman         ###   ########.fr       */
+/*   Updated: 2025/11/05 08:59:28 by fhollman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@
 //copy from s[start] len bytes. 0 terminate
 
 #include "libft.h"
-void	malloc_helper(char *s);
 
 char *ft_substr(char const *s, unsigned int start, size_t len)
 {
