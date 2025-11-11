@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: macbook2025 <macbook2025@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 12:02:01 by fhollman          #+#    #+#             */
-/*   Updated: 2025/10/30 17:11:56 by home             ###   ########.fr       */
+/*   Updated: 2025/11/11 09:18:04 by macbook2025      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,24 +21,11 @@
 *@return pointer to mapped string
 */
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
-{
-	int	len;
-	char	*return_s;
-	
-	if ((s == NULL) || (f == NULL))
-		return(NULL);
-	len = ft_strlen(s);
-	return_s = malloc(len + 1);
-	if (return_s == NULL)
-		return (NULL);
-	function(s, return_s, f);
-	return (return_s);
-}
+#include "libft.h"
 
-void function(char const	*s, char	*return_s, char (*f)(unsigned int, char))
+static void	function(char const *s, char *return_s, char (*f)(unsigned int, char))
 {
-	int	index;
+	unsigned int	index;
 
 	index = 0;
 	while (*s)
@@ -49,4 +36,19 @@ void function(char const	*s, char	*return_s, char (*f)(unsigned int, char))
 		index++;
 	}
 	*return_s = '\0';
+}
+
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	int		len;
+	char	*return_s;
+
+	if ((s == NULL) || (f == NULL))
+		return (NULL);
+	len = ft_strlen(s);
+	return_s = malloc(len + 1);
+	if (return_s == NULL)
+		return (NULL);
+	function(s, return_s, f);
+	return (return_s);
 }

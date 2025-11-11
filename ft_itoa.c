@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fhollman <fhollman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: macbook2025 <macbook2025@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 10:26:35 by fhollman          #+#    #+#             */
-/*   Updated: 2025/10/30 11:57:56 by fhollman         ###   ########.fr       */
+/*   Updated: 2025/11/11 09:28:16 by macbook2025      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,56 +18,57 @@
 *@return[s*] pointer to string with 'numbers' of n.
 */
 
-char	*ft_itoa(int n)
+
+static int	get_len(long n)
 {
-	int		len;
-	int 	nn;
-	char	*s;
-	int		sign_flag;
-	
+	int	len;
+
+	len = 0;
 	if (n == 0)
-	{
-		s = malloc(2);
-		s[0] = '0';
-		s[1] = '1';
-		return (s);
-	}
-	nn = n;
-	len = 1;
-	while (nn/10 != 0)
-	{
-		nn = nn /10;
-		len++;
-	}
+		return (1);
 	if (n < 0)
 	{
-		s = malloc(len + 2);
-		s[0] = '-';
-		s[len + 2] = '\0';
+		len = 1;
+		n = -n;
 	}
-	else
-		s = malloc(len + 1);
-		s[len + 1] = '\0';
-	while(n / 10 != 0)
+	while (n > 0)
 	{
-		s[len] = ((n % 10) + '0');
+		n = n / 10;
+		len++;
+	}
+	return (len);
+}
+
+char	*ft_itoa(int n)
+{
+	char	*s;
+	int		len;
+	long	nbr;
+
+	nbr = n;
+	len = get_len(nbr);
+	s = (char *)malloc(sizeof(char) * (len + 1));
+	if (!s)
+		return (NULL);
+	s[len] = '\0';
+	len--;
+	if (nbr == 0)
+	{
+		s[0] = '0';
+		return (s);
+	}
+	if (nbr < 0)
+	{
+		s[0] = '-';
+		nbr = -nbr;
+	}
+	while (nbr > 0)
+	{
+		s[len] = (nbr % 10) + '0';
+		nbr = nbr / 10;
 		len--;
-		n = n /10;
 	}
 	return (s);
 }
-/*
-123...
-count 'magnitude' count_m %10 untill smaller 10.
-123.. % (count_m * 10)
 
 
-
-123 % 10 = 3
-	3
-12 % 10 = 2
-3 + 2 * 10
-1 % 10 = 1 \\ 1
-23 * 10 * 10 \\2
-0 % 10 = 0 stop
-*/

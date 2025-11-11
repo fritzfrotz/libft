@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fhollman <fhollman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: macbook2025 <macbook2025@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 08:01:37 by fhollman          #+#    #+#             */
-/*   Updated: 2025/11/03 13:17:35 by fhollman         ###   ########.fr       */
+/*   Updated: 2025/11/11 09:16:31 by macbook2025      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,94 +19,71 @@
 
 #include "libft.h"
 
-char **ft_split(char const *s, char c)
+static char	**ft_free_array(char **array, size_t i)
 {
-	/* allocate memory for the pointers to eachs string + NULL*/
-	
-	/*count chars and allocate momory for each string + '\0'
-	*copy string
-	*add '\0'
-	*/
-	char	**arr;
-
-	arr = malloc_array(s, c);
-	malloc_strings(arr, s, c);
-	cpy_strings(arr, s, c);
-	return (arr);
-	
-
+	while (i > 0)
+	{
+		i--;
+		free(array[i]);
+	}
+	free(array);
+	return (NULL);
 }
 
-int	count_words(char *s, char c)
+static size_t	ft_count_words(char const *s, char c)
 {
-	int	word_count;
+	size_t	count;
 
+	count = 0;
 	while (*s)
 	{
 		while (*s == c)
 			s++;
-		word_count =+ 1;
-		while (*s != c)
+		if (*s != '\0')
+			count++;
+		while (*s && *s != c)
 			s++;
 	}
-	return word_count;
+	return (count);
 }
 
-char	**malloc_array(unsigned char *s, char c)
+static size_t	ft_get_word_len(char const *s, char c)
 {
-	int	word_count;
-	char	**arr;
-	
-	word_count = count_words(s, c);
-	arr = malloc(word_count * sizeof(char *));
-	return (arr);
-}
+	size_t	len;
 
-void	malloc_strings(char **arr, char *s,char c)
-{
-	int	i;
-	int e;
-	int j;
-	int	char_in_word;
-	
-	i = 0;
-	e = 0;
-	j = 0;
-	char_in_word = 0;
-	while(*arr[i] != NULL)
+	len = 0;
+	while (s[len] && s[len] != c)
 	{
-		while (s[e] != c)
-		{
-			char_in_word++;
-			e++;
-		}
-		e++;
-		arr[i][j] = malloc(char_in_word);
-		char_in_word = 0;
-		i++;
-		j++;
+		len++;
 	}
+	return (len);
 }
 
-void	cpy_strings(char **arr, char *s,char c)
+char	**ft_split(char const *s, char c)
 {
-	int	i;
-	int e;
-	int j;
-	
+	char	**array;
+	size_t	word_count;
+	size_t	i;
+	size_t	word_len;
+
+	if (!s)
+		return (NULL);
+	word_count = ft_count_words(s, c);
+	array = (char **)malloc(sizeof(char *) * (word_count + 1));
+	if (!array)
+		return (NULL);
 	i = 0;
-	e = 0;
-	j = 0;
-	while(*arr[i] != NULL)
+	while (i < word_count)
 	{
-		while (s[e] != c)
-		{
-			arr[i][j] = s[e];
-			e++;
-			j++;
-		}
-		arr[i][j] = '\0';
-		e++;
+		while (*s == c)
+			s++;
+		word_len = ft_get_word_len(s, c);
+		array[i] = ft_substr(s, 0, word_len);
+		if (!array[i])
+			return (ft_free_array(array, i));
+		s += word_len;
 		i++;
 	}
+	array[i] = NULL;
+	return (array);
 }

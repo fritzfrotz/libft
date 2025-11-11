@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fhollman <fhollman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: macbook2025 <macbook2025@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 11:16:27 by fhollman          #+#    #+#             */
-/*   Updated: 2025/11/05 08:59:28 by fhollman         ###   ########.fr       */
+/*   Updated: 2025/11/11 09:07:51 by macbook2025      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,32 +27,37 @@
 
 #include "libft.h"
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	len_s;
-	char	*return_s;
-	signed	i;
-	
+	size_t	s_len;
+	size_t	real_len;
+	char	*sub;
+
 	if (s == NULL)
 		return (NULL);
-	len_s = ft_strlen(s);
-	if (start > len_s)
-		{
-		return_s = malloc(1);
-		if (!return_s)
-			return (NULL);
-		return_s[0] = '\0';
-		return(return_s);
-		}
-	if (len == 0)
-		return NULL;
 
-	return_s = malloc(len + 1);
-	if (!return_s)
+	s_len = ft_strlen(s);
+
+	if (start >= s_len)
+	{
+		sub = (char *)malloc(1);
+		if (sub == NULL)
+			return (NULL);
+		sub[0] = '\0';
+		return (sub);
+	}
+
+	if (len > s_len - start)
+		real_len = s_len - start;
+	else
+		real_len = len;
+
+	sub = (char *)malloc(real_len + 1);
+	if (sub == NULL)
 		return (NULL);
-	s += start;
-	while (len < i)
-		return_s[i] = s[i];
-		i++;
-	return_s[i] = '\0';
+
+	ft_memcpy(sub, s + start, real_len);
+	sub[real_len] = '\0';
+
+	return (sub);
 }

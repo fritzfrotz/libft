@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fhollman <fhollman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: macbook2025 <macbook2025@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 07:28:20 by fhollman          #+#    #+#             */
-/*   Updated: 2025/10/31 08:59:13 by fhollman         ###   ########.fr       */
+/*   Updated: 2025/11/11 11:45:15 by macbook2025      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	int	len;
 	
+	if (s == NULL)
+		return;
 	len = ft_strlen(s);
 	write(fd, s, len);
 }

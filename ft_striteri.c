@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fhollman <fhollman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: macbook2025 <macbook2025@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 06:33:06 by fhollman          #+#    #+#             */
-/*   Updated: 2025/10/31 07:12:44 by fhollman         ###   ########.fr       */
+/*   Updated: 2025/11/11 09:19:13 by macbook2025      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,7 @@
 
 #include "libft.h"
 
-void ft_striteri(char *s, void (*f)(unsigned int, char*))
-{
-	if ((s == NULL) || (f == NULL))
-		return;
-	function(s, f);
-}
-void	function(char *s, void (*f)(unsigned int, char*))
+static void	function(char *s, void (*f)(unsigned int, char*))
 {
 	unsigned int	index;
 	
@@ -36,4 +30,11 @@ void	function(char *s, void (*f)(unsigned int, char*))
 		f(index, &s[index]);
 		index++;
 	}
+}
+
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+{
+	if ((s == NULL) || (f == NULL))
+		return;
+	function(s, f);
 }
