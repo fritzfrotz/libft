@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fhollman <fhollman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: macbook2025 <macbook2025@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 12:44:03 by fhollman          #+#    #+#             */
-/*   Updated: 2025/11/12 12:19:52 by fhollman         ###   ########.fr       */
+/*   Updated: 2025/11/12 15:33:48 by macbook2025      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,32 @@
 */
 #include "libft.h"
 
+static void	dest_bigger(unsigned char *d, const unsigned char *s, size_t n)
+{
+	while (n > 0)
+	{
+		n--;
+		d[n] = s[n];
+	}
+}
+
+static void	dest_smaller(unsigned char *d, const unsigned char *s, size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < n)
+	{
+		d[i] = s[i];
+		i++;
+	}
+}
+
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned char		*d;
 	const unsigned char	*s;
-	size_t				i;
 
-	i = 0;
 	d = (unsigned char *)dest;
 	s = (const unsigned char *)src;
 	if (d == NULL && s == NULL)
@@ -41,23 +60,6 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	if (d > s)
 		dest_bigger(d, s, n);
 	else
-		dest_smaller();
+		dest_smaller(d, s, n);
 	return (dest);
-}
-
-void	dest_bigger(d, s, n)
-{
-	while (n > 0)
-	{
-		n--;
-		d[n] = s[n];
-	}
-}
-void	dest_smaller(i, n, d, s)
-{
-	while (i < n)
-	{
-		d[i] = s[i];
-		i++;
-	}
-}
+} 

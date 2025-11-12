@@ -3,20 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fhollman <fhollman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: macbook2025 <macbook2025@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 10:26:35 by fhollman          #+#    #+#             */
-/*   Updated: 2025/11/12 11:27:43 by fhollman         ###   ########.fr       */
+/*   Updated: 2025/11/12 15:34:12 by macbook2025      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 /*
 *converts an integer to a string
 *@param[n] int to convert to sting
 *@return[s*] pointer to string with 'numbers' of n.
 */
+
+#include "libft.h"
+
 static int	get_len(long n)
 {
 	int	len;
@@ -37,23 +38,14 @@ static int	get_len(long n)
 	return (len);
 }
 
-char	*ft_itoa(int n)
+static void	ft_fill_str(char *s, long nbr, int len)
 {
-	char	*s;
-	int		len;
-	long	nbr;
-
-	nbr = n;
-	len = get_len(nbr);
-	s = (char *)malloc(sizeof(char) * (len + 1));
-	if (!s)
-		return (NULL);
 	s[len] = '\0';
 	len--;
 	if (nbr == 0)
 	{
 		s[0] = '0';
-		return (s);
+		return;
 	}
 	if (nbr < 0)
 	{
@@ -66,5 +58,19 @@ char	*ft_itoa(int n)
 		nbr = nbr / 10;
 		len--;
 	}
+}
+
+char	*ft_itoa(int n)
+{
+	char	*s;
+	int		len;
+	long	nbr;
+
+	nbr = n;
+	len = get_len(nbr);
+	s = (char *)malloc(sizeof(char) * (len + 1));
+	if (!s)
+		return (NULL);
+	ft_fill_str(s, nbr, len);
 	return (s);
 }

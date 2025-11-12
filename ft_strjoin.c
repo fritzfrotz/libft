@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fhollman <fhollman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: macbook2025 <macbook2025@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 08:25:12 by fhollman          #+#    #+#             */
-/*   Updated: 2025/11/12 12:25:41 by fhollman         ###   ########.fr       */
+/*   Updated: 2025/11/12 15:35:01 by macbook2025      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,35 +18,24 @@
 *@param[s2] second string
 *@return new return string with s1, s2 concat.
 */
+
 #include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int		i;
-	int		q;
-	char	*return_s;
-	int		len_s1;
-	int		len_s2;
+	char	*new_str;
+	size_t	len_s1;
+	size_t	len_s2;
 
 	if (s1 == NULL || s2 == NULL)
 		return (NULL);
 	len_s1 = ft_strlen(s1);
 	len_s2 = ft_strlen(s2);
-	return_s = malloc(len_s1 + len_s2 + 1);
-	if (!return_s)
-		return (0);
-	i = 0;
-	while (i < len_s1)
-	{
-		return_s[i] = s1[i];
-		i++;
-	}
-	q = 0;
-	while (q < len_s2)
-	{
-		return_s[i + q] = s2[q];
-		q++;
-	}
-	return_s[i + q] = '\0';
-	return (return_s);
+	new_str = (char *)malloc(sizeof(char) * (len_s1 + len_s2 + 1));
+	if (new_str == NULL)
+		return (NULL);
+	ft_memcpy(new_str, s1, len_s1);
+	ft_memcpy(new_str + len_s1, s2, len_s2);
+	new_str[len_s1 + len_s2] = '\0';
+	return (new_str);
 }
