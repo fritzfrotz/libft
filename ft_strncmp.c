@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fhollman <fhollman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: macbook2025 <macbook2025@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 09:17:25 by fhollman          #+#    #+#             */
-/*   Updated: 2025/11/12 10:23:21 by fhollman         ###   ########.fr       */
+/*   Updated: 2025/11/12 17:20:52 by macbook2025      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@
 //if the same continue untill end
 //if stings are the same return 0
 */
+#include "libft.h"
+
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t			i;
@@ -37,14 +39,13 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	i = 0;
 	us1 = (unsigned char *)s1;
 	us2 = (unsigned char *)s2;
+
 	while (i < n)
 	{
 		if (us1[i] != us2[i])
-		{
 			return (us1[i] - us2[i]);
-			if (us1[i] == '\0')
-				return (0);
-		}
+		if (us1[i] == '\0')
+			return (0);
 		i++;
 	}
 	return (0);
