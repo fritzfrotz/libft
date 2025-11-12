@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: macbook2025 <macbook2025@student.42.fr>    +#+  +:+       +#+        */
+/*   By: fhollman <fhollman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 08:51:48 by fhollman          #+#    #+#             */
-/*   Updated: 2025/11/11 09:14:16 by macbook2025      ###   ########.fr       */
+/*   Updated: 2025/11/12 11:40:43 by fhollman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,8 @@
 *@return	stripped string
 */
 
-
 #include "libft.h"
 
-/*
-* This is a static helper function.
-* It must be in the same .c file as ft_strtrim.
-*/
 static int	char_in_set(char c, char const *set)
 {
 	int	i;
@@ -40,24 +35,17 @@ static int	char_in_set(char c, char const *set)
 	return (0);
 }
 
-/*
-* This is a static helper function.
-* It must be in the same .c file as ft_strtrim.
-*/
 static char	*return_nt(void)
 {
 	char	*return_s;
-	
+
 	return_s = malloc(1);
 	if (!return_s)
-		return(NULL);
+		return (NULL);
 	return_s[0] = '\0';
 	return (return_s);
 }
 
-/*
-* This is the fixed version of your ft_strtrim.
-*/
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		i;
@@ -65,34 +53,28 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		j;
 	int		total_len;
 	char	*return_s;
-	
+
 	if (!s1)
 		return (NULL);
-	
 	total_len = ft_strlen(s1);
 	i = 0;
 	while (s1[i] && char_in_set(s1[i], set))
 		i++;
-	
 	e = total_len - 1;
 	while (e >= 0 && char_in_set(s1[e], set))
 		e--;
-
 	if (i > e)
 		return (return_nt());
-	
 	total_len = e - i + 1;
 	return_s = malloc(total_len + 1);
 	if (!return_s)
 		return (NULL);
-	
 	j = 0;
 	while (j < total_len)
 	{
 		return_s[j] = s1[i + j];
 		j++;
 	}
-	
 	return_s[j] = '\0';
 	return (return_s);
 }

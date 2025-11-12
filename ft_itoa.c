@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: macbook2025 <macbook2025@student.42.fr>    +#+  +:+       +#+        */
+/*   By: fhollman <fhollman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 10:26:35 by fhollman          #+#    #+#             */
-/*   Updated: 2025/11/11 09:28:16 by macbook2025      ###   ########.fr       */
+/*   Updated: 2025/11/12 11:27:43 by fhollman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 *@param[n] int to convert to sting
 *@return[s*] pointer to string with 'numbers' of n.
 */
-
-
 static int	get_len(long n)
 {
 	int	len;
@@ -70,5 +68,3 @@ char	*ft_itoa(int n)
 	}
 	return (s);
 }
-
-

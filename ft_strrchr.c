@@ -6,7 +6,7 @@
 /*   By: fhollman <fhollman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 07:31:03 by fhollman          #+#    #+#             */
-/*   Updated: 2025/11/04 09:49:05 by fhollman         ###   ########.fr       */
+/*   Updated: 2025/11/12 10:28:28 by fhollman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,15 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	char	*r;
-	
+
 	r = NULL;
 	while (*s != '\0')
-		{
+	{
 		if (*s == (char)c)
-			r = (char*)s;
+			r = (char *)s;
 		s++;
-		}
+	}
 	if (*s == (char)c)
-		return (char*)s;
+		return ((char *)s);
 	return (r);
 }

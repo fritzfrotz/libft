@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: macbook2025 <macbook2025@student.42.fr>    +#+  +:+       +#+        */
+/*   By: fhollman <fhollman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 12:02:01 by fhollman          #+#    #+#             */
-/*   Updated: 2025/11/11 09:18:04 by macbook2025      ###   ########.fr       */
+/*   Updated: 2025/11/12 11:33:58 by fhollman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@
 
 #include "libft.h"
 
-static void	function(char const *s, char *return_s, char (*f)(unsigned int, char))
+static void	function(char const *s, char *return_s, char (*f)\
+(unsigned int, char))
 {
 	unsigned int	index;
 

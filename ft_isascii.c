@@ -6,11 +6,11 @@
 /*   By: fhollman <fhollman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 14:18:55 by fhollman          #+#    #+#             */
-/*   Updated: 2025/11/05 07:15:39 by fhollman         ###   ########.fr       */
+/*   Updated: 2025/11/12 09:54:19 by fhollman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int	c)
+int	ft_isascii(int c)
 {
 	return ((c >= 0) && (c <= 127));
 }

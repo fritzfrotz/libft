@@ -6,11 +6,11 @@
 /*   By: fhollman <fhollman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 07:19:28 by fhollman          #+#    #+#             */
-/*   Updated: 2025/10/21 07:54:52 by fhollman         ###   ########.fr       */
+/*   Updated: 2025/11/12 10:00:03 by fhollman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int	c)
+int	ft_tolower(int c)
 {
 	if ((c >= 'A') && (c <= 'Z'))
 		return (c + 32);

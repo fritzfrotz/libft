@@ -3,16 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: fhollman <fhollman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 10:08:49 by fhollman          #+#    #+#             */
-/*   Updated: 2025/11/04 15:30:46 by home             ###   ########.fr       */
+/*   Updated: 2025/11/12 10:48:53 by fhollman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-void	*ft_memset(void *s, int c, size_t n)
-{
 /*
 *fills n bites of memory pointet to by s with c.
 *using siged char to tuncate int to char.
@@ -25,15 +22,18 @@ void	*ft_memset(void *s, int c, size_t n)
 //just write over the mem until n is reached.
 //give pointer to mem back.
 
+#include "libft.h"
+
+void	*ft_memset(void *s, int c, size_t n)
+{
 	unsigned char	*ptr;
 	unsigned char	byte;
 
 	byte = c;
 	ptr = s;
-	while(n--)
+	while (n--)
 	{
 		*ptr++ = byte;
 	}
 	return (s);
 }
- 

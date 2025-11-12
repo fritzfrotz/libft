@@ -40,6 +40,9 @@ ft_putstr_fd.c \
 ft_putendl_fd.c \
 ft_putnbr_fd.c \
 ft_itoa.c \
+
+
+SRCS_BONUS = \
 ft_lstnew.c \
 ft_lstadd_front.c \
 ft_lstsize.c \
@@ -56,10 +59,8 @@ ft_lstmap.c \
 
 
 
-
-
-
 OBJS = $(SRCS:.c=.o)
+OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -68,11 +69,17 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
 
+bonus: $(NAME)
+$(NAME): $(OBJS_BONUS)
+	$(AR) $(NAME) $(OBJS_BONUS)
+
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(OBJS_BONUS)
 
 fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
+
+.PHONY: all bonus clean fclean re
 

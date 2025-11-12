@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: macbook2025 <macbook2025@student.42.fr>    +#+  +:+       +#+        */
+/*   By: fhollman <fhollman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 06:33:06 by fhollman          #+#    #+#             */
-/*   Updated: 2025/11/11 09:19:13 by macbook2025      ###   ########.fr       */
+/*   Updated: 2025/11/12 11:36:05 by fhollman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 static void	function(char *s, void (*f)(unsigned int, char*))
 {
 	unsigned int	index;
-	
+
 	index = 0;
 	while (s[index] != '\0')
 	{
@@ -35,6 +35,6 @@ static void	function(char *s, void (*f)(unsigned int, char*))
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	if ((s == NULL) || (f == NULL))
-		return;
+		return ;
 	function(s, f);
 }

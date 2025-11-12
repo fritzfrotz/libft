@@ -6,11 +6,11 @@
 /*   By: fhollman <fhollman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 14:18:58 by fhollman          #+#    #+#             */
-/*   Updated: 2025/10/21 10:07:06 by fhollman         ###   ########.fr       */
+/*   Updated: 2025/11/12 09:53:34 by fhollman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int	c)
+int	ft_isdigit(int c)
 {
 	return ((c >= '0') && (c <= '9'));
 }

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fhollman <fhollman@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/12 11:00:24 by fhollman          #+#    #+#             */
+/*   Updated: 2025/11/12 11:01:11 by fhollman         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 /*
 *mem for arry size nmemb * size, init with 0
 *@param[nmemb] size of arraz member
@@ -15,10 +27,10 @@ void	*ft_calloc(size_t nmemb, size_t size)
 
 	if (nmemb == 0 || size == 0)
 	{
-		mem = malloc(1); 
+		mem = malloc(1);
 		if (mem == NULL)
 			return (NULL);
-        ft_bzero(mem, 1); 
+		ft_bzero(mem, 1);
 		return (mem);
 	}
 	total_size = nmemb * size;
