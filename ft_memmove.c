@@ -6,7 +6,7 @@
 /*   By: macbook2025 <macbook2025@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 12:44:03 by fhollman          #+#    #+#             */
-/*   Updated: 2025/11/12 15:33:48 by macbook2025      ###   ########.fr       */
+/*   Updated: 2025/11/12 16:01:30 by macbook2025      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	d = (unsigned char *)dest;
 	s = (const unsigned char *)src;
-	if (d == NULL && s == NULL)
+	if (d == NULL || s == NULL)
 		return (NULL);
 	if (d == s || n == 0)
 		return (dest);
