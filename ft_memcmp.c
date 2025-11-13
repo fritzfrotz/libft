@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fhollman <fhollman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: macbook2025 <macbook2025@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 14:16:38 by fhollman          #+#    #+#             */
-/*   Updated: 2025/11/12 11:07:54 by fhollman         ###   ########.fr       */
+/*   Updated: 2025/11/12 17:56:06 by macbook2025      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
 *compares two memory reagions, returns integer dependent of the results.
-*substracts *s1 from *s2, if value != 0 returns it.
+*subtracts *s1 from *s2, if value != 0 returns it.
 *if n is zerro the return value is 0;
 *@param[s1] memory area 1
 *@param[s2] memry area 2

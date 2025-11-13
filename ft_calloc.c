@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fhollman <fhollman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: macbook2025 <macbook2025@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 11:00:24 by fhollman          #+#    #+#             */
-/*   Updated: 2025/11/12 11:01:11 by fhollman         ###   ########.fr       */
+/*   Updated: 2025/11/12 17:31:52 by macbook2025      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
 *mem for arry size nmemb * size, init with 0
-*@param[nmemb] size of arraz member
+*@param[nmemb] size of array member
 *@param[size] number of elements in arr
 *@return[] 
 */
