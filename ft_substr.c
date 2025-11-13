@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fhollman <fhollman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: macbook2025 <macbook2025@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 11:16:27 by fhollman          #+#    #+#             */
-/*   Updated: 2025/11/12 11:06:23 by fhollman         ###   ########.fr       */
+/*   Updated: 2025/11/13 19:31:15 by macbook2025      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,6 @@
 *@params[start] start of substr
 *@params[len] len of substr
 */
-//count len s
-//if len s < start-> NULL
-//if len = 0 -> NULL
-//if s = NUL -> NULL
-// allocate memory: len_s - (start + len) bytes
-//copy from s[start] len bytes. 0 terminate
 
 #include "libft.h"
 
