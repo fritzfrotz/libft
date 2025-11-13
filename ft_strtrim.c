@@ -6,7 +6,7 @@
 /*   By: macbook2025 <macbook2025@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 08:51:48 by fhollman          #+#    #+#             */
-/*   Updated: 2025/11/12 15:34:28 by macbook2025      ###   ########.fr       */
+/*   Updated: 2025/11/13 19:18:34 by macbook2025      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,17 +33,6 @@ static int	char_in_set(char c, char const *set)
 		i++;
 	}
 	return (0);
-}
-
-static char	*return_nt(void)
-{
-	char	*return_s;
-
-	return_s = malloc(1);
-	if (!return_s)
-		return (NULL);
-	return_s[0] = '\0';
-	return (return_s);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
