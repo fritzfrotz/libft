@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: macbook2025 <macbook2025@student.42.fr>    +#+  +:+       +#+        */
+/*   By: fhollman <fhollman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 12:44:03 by fhollman          #+#    #+#             */
-/*   Updated: 2025/11/12 16:01:30 by macbook2025      ###   ########.fr       */
+/*   Updated: 2025/11/14 08:55:08 by fhollman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,4 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	else
 		dest_smaller(d, s, n);
 	return (dest);
-} 
+}

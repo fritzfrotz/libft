@@ -6,7 +6,7 @@
 /*   By: fhollman <fhollman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 11:42:46 by fhollman          #+#    #+#             */
-/*   Updated: 2025/11/12 11:08:57 by fhollman         ###   ########.fr       */
+/*   Updated: 2025/11/14 09:05:11 by fhollman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,9 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned char	*ptr_src;
 	unsigned char	*ptr_dest;
 
-	if (!dest || !src)
+	if (n == 0)
+		return (dest);
+	if (!dest && !src)
 		return (NULL);
 	ptr_dest = (unsigned char *)dest;
 	ptr_src = (unsigned char *)src;

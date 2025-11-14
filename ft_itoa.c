@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: macbook2025 <macbook2025@student.42.fr>    +#+  +:+       +#+        */
+/*   By: fhollman <fhollman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 10:26:35 by fhollman          #+#    #+#             */
-/*   Updated: 2025/11/12 15:34:12 by macbook2025      ###   ########.fr       */
+/*   Updated: 2025/11/14 08:54:49 by fhollman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static void	ft_fill_str(char *s, long nbr, int len)
 	if (nbr == 0)
 	{
 		s[0] = '0';
-		return;
+		return ;
 	}
 	if (nbr < 0)
 	{

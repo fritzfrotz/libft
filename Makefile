@@ -5,8 +5,7 @@ AR = ar rcs
 RM = rm -f
 
 
-SRCS = \
-ft_isalnum.c \
+SRCS = ft_isalnum.c \
 ft_isalpha.c \
 ft_isdigit.c \
 ft_isprint.c \
@@ -69,8 +68,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
 
-bonus: $(NAME)
-$(NAME): $(OBJS_BONUS)
+bonus: $(OBJS) $(OBJS_BONUS)
 	$(AR) $(NAME) $(OBJS_BONUS)
 
 clean:
